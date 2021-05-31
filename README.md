@@ -1,30 +1,15 @@
-# Introduction
+# R-Drop: Regularized Dropout for Neural Networks
 
-This repository contains the code for DropReg, which is a simple yet effective regularization method built upon dropout.
-Through minimizing the bidirectional KL divergence of the outputs of any sub-model pairs sampled from dropout in model training, DropReg can constrain and regularize the output distributions of sub-models produced by the randomness of dropout.
+R-drop is a simple yet very effective regularization method built upon dropout, by minimizing the bidirectional KL-divergence of the output distributions of any pair of sub models sampled from dropout in model training.
 
-# Requirements and Installation
+R-Drop is capable to handle many tasks for both NLP and CV:
 
-* [PyTorch](http://pytorch.org/) version == 1.8
-* Python version >= 3.6
+1. [Neural Machine Translation Task](fairseq_src/README.md)
 
-**Installing from source**
+2. [Abstractive Summarization Task](fairseq_src/README.md)
 
-To install fairseq from source and develop locally:
-```
-git clone https://github.com/dropreg/DropReg.git
-cd DropReg
-pip install --editable .
-```
+3. [Language Modeling Task](fairseq_src/README.md)
 
-# Getting Started
+4. [Language Understanding Task](huggingface_transformer_src/README.md)
 
-**IWSLT'14 German to English (Transformer)**
-
-First download and preprocess the data following example/translation.
-
-Next we'll train a Transformer translation model with DropReg over this data:
-```
-cd example/drop_reg
-bash run_train.sh
-```
+5. [Image Classification Task](vit_src/README.md)
