@@ -2,9 +2,9 @@ import torch
 from fairseq.models.bart import BARTModel
 
 bart = BARTModel.from_pretrained(
-    '/data/lxb/cnndailymail_sum/kl-small-checkpoints/',
-    checkpoint_file='checkpoint7.pt',
-    data_name_or_path='/data/lxb/cnndailymail_sum/cnn_dm-bin/'
+    'bart-large-checkpoints/',
+    checkpoint_file='checkpoint_best.pt',
+    data_name_or_path='cnn_dm-bin/'
 )
 
 bart.cuda()
@@ -12,7 +12,7 @@ bart.eval()
 bart.half()
 count = 1
 bsz = 32
-with open('/data/lxb/cnndailymail_sum/cnn_dm/test.source') as source, open('/data/lxb/cnndailymail_sum/cnn_dm/test_small_kl.hypo', 'w') as fout:
+with open('/data/cnn_dm/test.source') as source, open('/data/cnn_dm/test.hypo', 'w') as fout:
     sline = source.readline().strip()
     slines = [sline]
     for sline in source:

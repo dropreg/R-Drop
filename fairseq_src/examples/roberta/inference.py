@@ -1,17 +1,10 @@
 from fairseq.models.roberta import RobertaModel
 import torch
 
-one = torch.ones([2, 2])
-zero = torch.zeros([2, 2])
-print(torch.stack([one, zero]))
-print(torch.stack([one, zero]).view(2, -1))
-print(torch.stack([one, zero]).view(2, -1).view(2, -1))
-exit()
-
 roberta = RobertaModel.from_pretrained(
-    '/data/lxb/glue_result/roberta/MRPC/',
-    checkpoint_file='checkpoint10.pt',
-    data_name_or_path='/data/lxb/glue_result/data/MRPC-bin'
+    '/data/roberta/MRPC/',
+    checkpoint_file='checkpoint_best.pt',
+    data_name_or_path='/data/MRPC-bin'
 )
 
 label_fn = lambda label: roberta.task.label_dictionary.string(
@@ -25,7 +18,7 @@ for idx, l in enumerate(roberta.model.encoder.sentence_encoder.layers):
 ncorrect, nsamples = 0, 0
 roberta.cuda()
 roberta.eval()
-with open('/data/lxb/glue_result/data/glue_data/MRPC/dev.tsv') as fin:
+with open('/data/MRPC/dev.tsv') as fin:
     fin.readline()
     for index, line in enumerate(fin):
         tokens = line.strip().split('\t')

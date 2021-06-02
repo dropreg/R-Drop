@@ -10,7 +10,7 @@ ROBERTA_PATH=/data/roberta.large/model.pt
 TASK=QNLI
 DATA_DIR=/data/result/$TASK-bin
 
-save_dir=/data/lxb/glue_result/roberta/$TASK-mean-5
+save_dir=/data/roberta/$TASK-mean-5
 mkdir -p $save_dir
 
 CUDA_VISIBLE_DEVICES=7 fairseq-train $DATA_DIR \

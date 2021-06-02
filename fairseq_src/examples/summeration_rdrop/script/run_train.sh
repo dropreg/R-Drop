@@ -8,9 +8,9 @@ WARMUP_UPDATES=500
 LR=3e-05
 MAX_TOKENS=1024
 UPDATE_FREQ=16
-DATA_PATH=cnndailymail_sum/cnn_dm-bin/
+DATA_PATH=cnn_dm-bin/
 BART_PATH=bart.large/model.pt
-MODEL_PATH=cnndailymail_sum/bart-large-checkpoints
+MODEL_PATH=bart-large-checkpoints/
 mkdir -p $save_dir
 nvidia-smi
 
