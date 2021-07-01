@@ -9,28 +9,25 @@ The following instructions can be used to train a Transformer model on the [IWSL
 Download and preprocess the data:
 ```bash
 bash script/prepare-iwslt14.sh
+
 ```
 
 Binarize the dataset
 ```
-TEXT=iwslt14.tokenized.de-en/
-fairseq-preprocess \
-    --source-lang en --target-lang de \
-    --trainpref $TEXT/train --validpref $TEXT/valid --testpref $TEXT/test \
-    --destdir iwslt14.tokenized.de-en/data-bin/--thresholdtgt 0 --thresholdsrc 0 \
-    --workers 20
+cd ../../
+bash examples/translation_rdrop/script/run_binarize.sh
 ```
 
 # Training Script
 
 Train a Transformer translation model with R-Drop over this data:
 ```
-bash script/run_train.sh
+bash examples/translation_rdrop/script/run_train.sh
 ```
 
 # Inference Script
 
 Evaluate R-Drop model over this data:
 ```
-bash script/run_inference.sh
+bash examples/translation_rdrop/script/run_inference.sh
 ```
