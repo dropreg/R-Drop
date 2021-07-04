@@ -3,7 +3,7 @@
 R-drop is a simple yet very effective regularization method built upon dropout, by minimizing the bidirectional KL-divergence of the output distributions of any pair of sub models sampled from dropout in model training.
 
 
-#  Usage:
+##  Usage:
 R-Drop is an almost universal method for supervised tasks. If you don't care about the tasks in this project, and want to use R-Drop for your own tasks, you can simply use the following methods:
 
 ```python
@@ -44,7 +44,7 @@ loss = ce_loss + α * kl_loss
 
 ```
 
-# Quick Links:
+## Quick Links:
 R-Drop is capable to handle many tasks for both NLP and CV:
 
 1. [Neural Machine Translation Task](fairseq_src/README.md)
