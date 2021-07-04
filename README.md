@@ -14,8 +14,8 @@ model = TaskModel()
 
 def compute_kl_loss(self, p, q pad_mask=None):
     
-    p_loss = torch.nn.functional.kl_div(F.log_softmax(p, dim=-1), F.softmax(q, dim=-1), reduction='none')
-    q_loss = torch.nn.functional.kl_div(F.log_softmax(q, dim=-1), F.softmax(p, dim=-1), reduction='none')
+    p_loss = F.kl_div(F.log_softmax(p, dim=-1), F.softmax(q, dim=-1), reduction='none')
+    q_loss = F.kl_div(F.log_softmax(q, dim=-1), F.softmax(p, dim=-1), reduction='none')
     
     # pad_mask is for seq-level tasks
     if pad_mask is not None:
