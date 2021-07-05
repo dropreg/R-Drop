@@ -4,7 +4,8 @@ R-drop is a simple yet very effective regularization method built upon dropout, 
 
 
 ##  Usage:
-R-Drop is an almost universal method for supervised tasks. If you don't care about the tasks in this project, and want to use R-Drop for your own tasks, you can simply use the following methods:
+R-Drop is an almost universal method for supervised tasks and even performs well for semi-supervised setting. 
+For other settings and tasks that are not mentioned in our paper, feel free to try the following piece of code.
 
 ```python
 import torch.nn.functional as F
