@@ -36,7 +36,7 @@ logits = model(x)
 logits2 = model(x)
 
 # cross entropy loss for classifier
-ce_loss = cross_entropy_loss(logits, label)
+ce_loss = 0.5 * (cross_entropy_loss(logits, label) + cross_entropy_loss(logits2, label))
 
 kl_loss = compute_kl_loss(logits, logits2)
 
