@@ -16,7 +16,7 @@ python -c "import torch; print(torch.__version__)"
 export CUDA_VISIBLE_DEVICES=0
 
 fairseq-train $DATA_PATH \
-    --user-dir examples/translation_rdrop/translation_rdrop_src/ \
+    --user-dir examples/translation_rdrop/translation_rdrop_src \
     --task rdrop_translation \
     --arch transformer_iwslt_de_en \
     --share-all-embeddings \

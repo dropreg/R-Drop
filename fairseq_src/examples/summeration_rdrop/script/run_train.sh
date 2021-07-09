@@ -10,16 +10,17 @@ MAX_TOKENS=1024
 UPDATE_FREQ=16
 DATA_PATH=cnn_dm-bin/
 BART_PATH=bart.large/model.pt
-MODEL_PATH=bart-large-checkpoints/
-mkdir -p $save_dir
+MODEL_PATH=/data/lxb/test/bart-large-checkpoints/
+mkdir -p $MODEL_PATH
 nvidia-smi
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3 
 
 fairseq-train $DATA_PATH \
+    --user-dir examples/summeration_rdrop/summeration_rdrop_src \
     --restore-file $BART_PATH \
     --max-tokens $MAX_TOKENS \
-    --task rdrop_translation \
+    --task rdrop_summeration \
     --source-lang source --target-lang target \
     --truncate-source \
     --layernorm-embedding \

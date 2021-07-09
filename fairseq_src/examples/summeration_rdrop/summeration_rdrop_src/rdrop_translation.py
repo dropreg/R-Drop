@@ -5,11 +5,12 @@
 
 import logging
 import torch
-from fairseq.tasks import TranslationTask, register_task
+from fairseq.tasks import register_task
+from fairseq.tasks.translation import TranslationTask, TranslationConfig
 
 logger = logging.getLogger(__name__)
 
-@register_task("rdrop_translation")
+@register_task("rdrop_summeration", dataclass=TranslationConfig)
 class RDropTranslationTask(TranslationTask):
     
     def train_step(
