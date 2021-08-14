@@ -7,7 +7,7 @@ TASK=MRPC
 
 # --save_strategy no \
 CUDA_VISIBLE_DEVICES=0 python run_glue.py \
-  --model_name_or_path bert-base-cased \
+  --model_name_or_path roberta-base \
   --task_name $TASK \
   --do_train \
   --do_eval \

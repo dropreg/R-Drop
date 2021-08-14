@@ -22,6 +22,12 @@ cd bert_rdrop/
 bash run.sh
 ```
 
+You can run it on Roberta by simply switching hyper-parameter: model_name_or_path
+
+```bash
+--model_name_or_path roberta-base \
+```
+
 For each of the GLUE task, you will need to use following cmd-line arguments:
 
 Model | MNLI | QNLI | QQP | RTE | SST-2 | MRPC | CoLA | STS-B
