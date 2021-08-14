@@ -29,6 +29,7 @@ fairseq-train $DATA_PATH \
     --reset-optimizer --reset-dataloader --reset-meters \
     --required-batch-size-multiple 1 \
     --arch bart_large \
+    --reg-alpha 0.7 \
     --criterion reg_label_smoothed_cross_entropy \
     --label-smoothing 0.1 \
     --dropout 0.1 --attention-dropout 0.1 \

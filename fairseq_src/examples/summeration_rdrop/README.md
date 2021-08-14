@@ -35,3 +35,7 @@ Then, Download [files2rouge](https://github.com/pltrdy/files2rouge) to evaluate 
 ```
 files2rouge /data/cnn_dm/test.target /data/cnn_dm/test.hypo
 ```
+
+> Note that our environment: GPU GeForce RTX 3090 (24G) NVIDIA Driver Version = 460.67  CUDA Version = 11.2 torch version = 1.8.1 .
+> We are not sure whether it will work for other environments. If you don't have enough GPU memory, you can modify parameter: MAX_TOKENS=1024
+UPDATE_FREQ=16 to ease this problem.
