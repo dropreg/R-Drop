@@ -1,6 +1,7 @@
 # R-Drop: Regularized Dropout for Neural Networks
 
-R-drop is a simple yet very effective regularization method built upon dropout, by minimizing the bidirectional KL-divergence of the output distributions of any pair of sub models sampled from dropout in model training.
+This repo contains the code of our NeurIPS-2021 paper, [R-drop: Regularized Dropout for Neural Networks](https://arxiv.org/abs/2106.14448). 
+R-Drop is a simple yet very effective regularization method built upon dropout, by minimizing the bidirectional KL-divergence of the output distributions of any pair of sub models sampled from dropout in model training.
 
 
 ##  Usage:
