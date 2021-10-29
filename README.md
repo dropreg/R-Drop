@@ -3,6 +3,14 @@
 This repo contains the code of our NeurIPS-2021 paper, [R-drop: Regularized Dropout for Neural Networks](https://arxiv.org/abs/2106.14448). 
 R-Drop is a simple yet very effective regularization method built upon dropout, by minimizing the bidirectional KL-divergence of the output distributions of any pair of sub models sampled from dropout in model training.
 
+```
+@inproceedings{liang2021rdrop,
+  title={R-Drop: Regularized Dropout for Neural Networks},
+  author={Liang, Xiaobo* and Wu, Lijun* and Li, Juntao and Wang, Yue and Meng, Qi and Qin, Tao and Chen, Wei and Zhang, Min and Liu, Tie-Yan},
+  booktitle={NeurIPS},
+  year={2021}
+}
+```
 
 ##  Usage:
 R-Drop is an almost universal method for supervised tasks and even performs well for semi-supervised setting. 
@@ -58,4 +66,6 @@ R-Drop is capable to handle many tasks for both NLP and CV:
 4. [Language Understanding Task](huggingface_transformer_src/README.md)
 
 5. [Image Classification Task](vit_src/README.md)
+
+
 
