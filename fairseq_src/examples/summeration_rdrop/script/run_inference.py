@@ -4,7 +4,7 @@ from fairseq.models.bart import BARTModel
 bart = BARTModel.from_pretrained(
     'bart-large-checkpoints/',
     checkpoint_file='checkpoint_best.pt',
-    data_name_or_path='cnn_dm-bin/'
+    data_name_or_path='bart-large-checkpoints/'
 )
 
 bart.cuda()
