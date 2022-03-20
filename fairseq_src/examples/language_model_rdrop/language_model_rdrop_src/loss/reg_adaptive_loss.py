@@ -106,8 +106,8 @@ class RegAdaptiveLoss(FairseqCriterion):
                     q_loss = q_loss.sum()
                 kl_loss += (p_loss + q_loss) / 2.0
 
-        loss = base_loss + self.kl_weight * another_loss
-        loss += kl_loss
+        loss = base_loss + another_loss
+        loss += self.kl_weight * kl_loss
         
         orig = utils.strip_pad(orig_target, self.padding_idx)
         ntokens = orig.numel()
