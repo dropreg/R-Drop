@@ -23,7 +23,7 @@ import torch.nn.functional as F
 # define your task model, which outputs the classifier logits
 model = TaskModel()
 
-def compute_kl_loss(self, p, q, pad_mask=None):
+def compute_kl_loss(p, q, pad_mask=None):
     
     p_loss = F.kl_div(F.log_softmax(p, dim=-1), F.softmax(q, dim=-1), reduction='none')
     q_loss = F.kl_div(F.log_softmax(q, dim=-1), F.softmax(p, dim=-1), reduction='none')
